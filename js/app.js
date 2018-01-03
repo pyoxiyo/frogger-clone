@@ -1,7 +1,6 @@
 var enemyX = -100;
 var enemyY = [220, 140, 60];
 var enemySP = [160, 240, 320];
-var enemySPR = enemySP[Math.floor(Math.random() * 3)];
 var playerX = 200;
 var playerY = 380;
 // Enemies our player must avoid
@@ -32,10 +31,10 @@ Enemy.prototype.update = function(dt) {
             this.y = enemyY[Math.floor(Math.random() * 3)];
         }
     }
-
+    // Handles collision between player and enemy
     if (player.x > this.x - 80 && player.x < this.x + 80 && player.y > this.y - 80 && player.y < this.y + 80) {
             player.x = playerX;
-            player.y = playerY;       
+            player.y = playerY;
     }
 
 };
